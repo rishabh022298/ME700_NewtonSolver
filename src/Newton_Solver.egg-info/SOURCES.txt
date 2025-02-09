@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+src/Newton_Solver/Newton_Solver.py
+src/Newton_Solver.egg-info/PKG-INFO
+src/Newton_Solver.egg-info/SOURCES.txt
+src/Newton_Solver.egg-info/dependency_links.txt
+src/Newton_Solver.egg-info/requires.txt
+src/Newton_Solver.egg-info/top_level.txt
+tests/test_NewtonSolver.py
