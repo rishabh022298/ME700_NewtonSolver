@@ -132,7 +132,7 @@ def test_convergence():
     J = lambda x: np.array([[J_11(x), J_12(x)],
                             [J_21(x), J_22(x)]])
     with pytest.raises(RuntimeError, match="Newton solver did not converge within given tolerance and iterations. Try changing parameters."):
-        newton_solver(F, J, [x0], tol=1e-6, max_iter=10)
+        ns.run_newton_solver(F, J, [x0], tol=1e-6, max_iter=10)
 
 '''
 Test 10: Test for checking if the function is returning multiple unique roots if the reasonable multiple initial guesses are provided.
