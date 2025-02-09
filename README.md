@@ -24,7 +24,7 @@ pip install numpy matplotlib pytest
 To use the solver, first import it into your script or notebook:  
 
 ```python
-from Newton_Solver import *
+from Newton_Solver import Newton_Solver as ns
 import numpy as np
 ```
 
@@ -32,7 +32,7 @@ import numpy as np
 The function can be called as:  
 
 ```python
-newton_solver(F, J, x0_list, tol, max_iter)
+ns.run_newton_solver(F, J, x0_list, tol, max_iter)
 ```
 
 #### **Function Parameters:**  
@@ -49,7 +49,7 @@ newton_solver(F, J, x0_list, tol, max_iter)
 F = lambda x: np.array([x**2 - 4])
 J = lambda x: np.array([[2*x]])
 x0_list = [5, -5, 1, -1]
-roots = newton_solver(F, J, x0_list, tol=1e-6, max_iter=100)
+roots = ns.run_newton_solver(F, J, x0_list, tol=1e-6, max_iter=100)
 print("Roots found:", roots)
 ```
 ---
