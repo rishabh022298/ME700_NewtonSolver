@@ -1,4 +1,4 @@
-from NewtonSolver import Newton_Solver
+from NewtonSolver import Newton_Solver as ns
 import pytest
 import numpy as np
 from pathlib import Path
@@ -9,7 +9,7 @@ Test 1: For checking the proper import of Newton Solver
 '''
 def test_hello_world():
     known_statement = "hello world!"
-    found_statement = hello_world()
+    found_statement = ns.hello_world()
     assert known_statement == found_statement
 
 '''
@@ -20,7 +20,7 @@ def test_initial_guesses_check_correct():
     F_2 = lambda x,y: x**3 + y**3
     F = [F_1,F_2]
     x0 = np.array([1,2])
-    assert initial_guesses_check(F, x0) == True
+    assert ns.initial_guesses_check(F, x0) == True
 
 '''
 Test 3: Tests if the function is returning the ValueError if the inputs aren't sensible.
@@ -31,7 +31,7 @@ def test_initial_guesses_check_incorrect():
     F = [F1,F2]
     x0 = [1]
     with pytest.raises(ValueError, match = "The inputs are either missing expressions or initial guesses."):
-        initial_guesses_check(F, x0)
+        ns.initial_guesses_check(F, x0)
 
 '''
 Test 4: Tests if the function is calculating delta x properly.
@@ -48,7 +48,7 @@ def test_calculate_delta_x():
     J = lambda x: np.array([[J_11(x), J_12(x)], [J_21(x), J_22(x)]])
     F_xi = F(xi)
     J_xi = J(xi)
-    calculated_delta_x = calculate_delta_x(J_xi,F_xi)
+    calculated_delta_x = ns.calculate_delta_x(J_xi,F_xi)
     actual_delta_x = [0.125, -1.75]
     assert np.allclose(actual_delta_x, calculated_delta_x)
 
@@ -58,14 +58,14 @@ Test 5: Test for if the function is returning a ValueError if the Jacobian is si
 def test_Singular_J():
     J = [[4, 2],[8, 4]]
     with pytest.raises(ValueError, match = "Jacobian matrix is singular."):
-        check_Jacobian(J)
+        ns.check_Jacobian(J)
 
 '''
 Test 6: Test for non singular Jacobian
 '''
 def test_Valid_J():
     Jx = [[4, 2], [16, 4]]
-    assert check_Jacobian(Jx) == True
+    assert ns.check_Jacobian(Jx) == True
 
 '''
 Test 7: Test for Newton Solver for 1D case for a system with known roots.
@@ -78,7 +78,7 @@ def test_NewtonSolver_1D():
     x0_list = [5]  # Provide multiple initial guesses
     known_roots = [2]
     
-    calculated_roots = newton_solver(F, J, x0_list, tol=1e-6, max_iter=100)
+    calculated_roots = ns.run_newton_solver(F, J, x0_list, tol=1e-6, max_iter=100)
     
     # Check if all expected roots are found
     assert all(any(np.isclose(root, calculated, atol=1e-6) for calculated in calculated_roots) for root in known_roots)
@@ -104,7 +104,7 @@ def test_NewtonSolver_2D():
     known_roots = np.array([[0, 0]])  # Only one root expected
 
     # Pass the initial guess list directly
-    calculated_roots = newton_solver(F, J, x0_list, tol=1e-6, max_iter=1000)
+    calculated_roots = ns.run_newton_solver(F, J, x0_list, tol=1e-6, max_iter=1000)
 
     # Filter roots that are close to each other
     unique_roots = []
@@ -149,7 +149,7 @@ def test_NewtonSolver_MultipleRoots():
     known_roots = [2, -2]
 
     # Compute roots using Newton's method
-    calculated_roots = newton_solver(F, J, x0_list, tol=1e-6, max_iter=100)
+    calculated_roots = ns.run_newton_solver(F, J, x0_list, tol=1e-6, max_iter=100)
 
     # Ensure both roots are found
     assert all(any(np.isclose(root, calculated, atol=1e-6) for calculated in calculated_roots) for root in known_roots)
