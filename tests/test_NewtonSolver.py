@@ -1,4 +1,4 @@
-from Newton_Solver import *
+from Newton_Solver import hello_world, initial_guesses_check, calculate_delta_x, check_Jacobian, newton_solver
 import pytest
 import numpy as np
 from pathlib import Path
