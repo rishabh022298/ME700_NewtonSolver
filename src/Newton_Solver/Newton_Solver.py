@@ -42,7 +42,7 @@ def calculate_delta_x(J_xi, F_xi):
 '''
 This is the main function which implements the Newton Sovler
 '''
-def newton_solver(F: Callable[[np.ndarray], np.ndarray], 
+def run_newton_solver(F: Callable[[np.ndarray], np.ndarray], 
                   J: Callable[[np.ndarray], np.ndarray], 
                   x0_list: list, 
                   tol: float, 
