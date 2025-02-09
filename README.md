@@ -81,12 +81,6 @@ print("Roots found:", roots)
 ```
 ---
 This will return roots as a *NumPy* array which might require a little bit of post processing for more presentable form.
-## **Testing the Solver**  
-Unit tests are provided in **`test_NewtonSolver.py`**. To run the tests, use:  
-
-```bash
-pytest test_NewtonSolver.py
-```
 
 ---
 
