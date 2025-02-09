@@ -7,7 +7,6 @@ name = "Newton_Solver"
 version = "0.0.0"
 description = "A Newton Solver implementation"
 authors = [{ name = "Rishabh", email = "rishy@bu.edu" }]
-description = "Newton_Solver workflow"
 readme = "README.md"
 license = { file="LICENSE" }
 requires-python = ">=3.9"
