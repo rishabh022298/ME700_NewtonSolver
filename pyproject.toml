@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Newton_Solver"
+version = "0.0.0"
+description = "A Newton Solver implementation"
+authors = [{ name = "Rishabh", email = "rishy@bu.edu" }]
+description = "Newton_Solver workflow"
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "numpy",
+    "scipy",
+    "pytest",
+    "pytest-cov",
+    "matplotlib"
+]
