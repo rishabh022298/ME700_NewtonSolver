@@ -1,0 +1,7 @@
+Help from ChatGPT was used for the following things:
+1. For writing and formatting README file
+2. Debugging issues related to handling of multiple guesses with Newton Solver function.
+3. Writing the function for checking if the inputs are sensible.
+4. Debugging the test case of 2D system of nonlinear equations and.
+5. Writing the plotting function.
+6. Understanding numpy.linalg and reshape functions.
