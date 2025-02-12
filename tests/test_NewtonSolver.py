@@ -1,4 +1,4 @@
-from Newton_Solver import Newton_Solver as ns
+from NewtonSolver import NewtonSolver as ns
 import pytest
 import numpy as np
 from pathlib import Path
