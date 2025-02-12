@@ -32,8 +32,8 @@ jobs:
       - name: Install test dependencies
         run: pip install pytest pytest-cov
 
-      - name: Install matplotlib
-        run: pip install matplotlib  # Add this line
+     # - name: Install matplotlib
+     #   run: pip install matplotlib  # Add this line
 
       - name: Run tests with coverage
         run: pytest --cov=Newton_Solver --cov-report=xml
