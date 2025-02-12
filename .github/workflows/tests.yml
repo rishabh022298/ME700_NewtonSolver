@@ -36,7 +36,7 @@ jobs:
      #   run: pip install matplotlib  # Add this line
 
       - name: Run tests with coverage
-        run: pytest --cov=Newton_Solver --cov-report=xml
+        run: pytest --cov=NewtonSolver --cov-report=xml
         # Replace 'my_package' with your actual package name
 
       - name: Upload coverage to Codecov
