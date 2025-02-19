@@ -5,3 +5,4 @@ Help from ChatGPT was used for the following things:
 4. Debugging the test case of 2D system of nonlinear equations and.
 5. Writing the plotting function.
 6. Understanding numpy.linalg and reshape functions.
+7. Updating .yml file so that tests run on all OS.
